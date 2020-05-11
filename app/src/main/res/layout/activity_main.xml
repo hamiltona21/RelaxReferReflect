@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Inspirational Quote"
+        android:text="@string/spaceHolder"
         android:gravity="center"
         android:textSize="25sp"
         android:layout_weight="1"
