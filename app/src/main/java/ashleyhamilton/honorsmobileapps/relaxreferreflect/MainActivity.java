@@ -3,6 +3,8 @@ package ashleyhamilton.honorsmobileapps.relaxreferreflect;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +16,29 @@ private String[] quotes={"Act as if what you do makes a difference. It does. - W
         TextView quote=findViewById(R.id.quoteSpot);
         String toSet=quotes[(int)(10*Math.random())];
         quote.setText(toSet);
+        Button relax=findViewById(R.id.relax);
+        Button refer=findViewById(R.id.refer);
+        Button reflect=findViewById(R.id.reflect);
+        View.OnClickListener myListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v.getId() == R.id.relax) {
+
+                }
+                else if(v.getId() == R.id.refer) {
+
+                }
+                else if(v.getId() == R.id.reflect) {
+
+                }
+            }
+        };
+        refer.setOnClickListener(myListener);
+        reflect.setOnClickListener(myListener);
+        relax.setOnClickListener(myListener);
+
+
+
 
     }
 }

@@ -30,6 +30,7 @@
         android:layout_weight="1"
         android:background="#f6d2b4"
         android:layout_margin="10dp"
+        android:id="@+id/relax"
         />
 
     <Button
@@ -41,6 +42,7 @@
         android:layout_weight="1"
         android:background="#f6d2b4"
         android:layout_margin="10dp"
+        android:id="@+id/refer"
         />
     <Button
         android:layout_width="match_parent"
@@ -51,6 +53,7 @@
         android:layout_weight="1"
         android:background="#f6d2b4"
         android:layout_margin="10dp"
+        android:id="@+id/reflect"
         />
 
 
