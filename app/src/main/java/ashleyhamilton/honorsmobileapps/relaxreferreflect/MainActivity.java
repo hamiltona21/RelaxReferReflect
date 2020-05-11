@@ -2,6 +2,7 @@ package ashleyhamilton.honorsmobileapps.relaxreferreflect;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,13 +24,16 @@ private String[] quotes={"Act as if what you do makes a difference. It does. - W
             @Override
             public void onClick(View v) {
                 if(v.getId() == R.id.relax) {
-
+                    Intent intent = new Intent(MainActivity.this, RelaxActivity.class);
+                    startActivity(intent);
                 }
                 else if(v.getId() == R.id.refer) {
-
+                    Intent intent = new Intent(MainActivity.this, ReferActivity.class);
+                    startActivity(intent);
                 }
                 else if(v.getId() == R.id.reflect) {
-
+                    Intent intent = new Intent(MainActivity.this, ReflectActivity.class);
+                    startActivity(intent);
                 }
             }
         };
