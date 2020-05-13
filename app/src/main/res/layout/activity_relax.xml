@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:padding="15dp"
-    android:background="#89e3f0">
+    android:background="@color/colorPrimaryDark">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/stop_all"
-        android:background="#FFFFFF"
+        android:background="@color/colorAccent"
         android:layout_margin="10dp"
         android:textSize="26sp"
         android:layout_centerHorizontal="true"
@@ -21,7 +21,7 @@
 <LinearLayout
     android:layout_below="@id/stop"
     android:orientation="horizontal"
-    android:background="#89e3f0"
+    android:background="@color/colorPrimaryDark"
     android:layout_margin="10dp"
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
@@ -37,7 +37,7 @@
             android:layout_weight="1"
             android:scaleType="centerCrop"
             android:src="@drawable/upbeat"
-            android:background="#89e3f0"
+            android:background="@color/colorPrimaryDark"
             android:layout_margin="10dp"
             android:id="@+id/upbeat"/>
 
@@ -47,7 +47,7 @@
             android:layout_weight="1"
             android:scaleType="centerCrop"
             android:src="@drawable/frequency"
-            android:background="#89e3f0"
+            android:background="@color/colorPrimaryDark"
             android:layout_margin="10dp"
             android:id="@+id/frequency"/>
         <ImageButton
@@ -56,7 +56,7 @@
             android:layout_weight="1"
             android:scaleType="centerInside"
             android:src="@drawable/jazz"
-            android:background="#89e3f0"
+            android:background="@color/colorPrimaryDark"
             android:layout_margin="10dp"
             android:id="@+id/jazz"/>
         <ImageButton
@@ -65,7 +65,7 @@
             android:layout_weight="1"
             android:scaleType="centerCrop"
             android:src="@drawable/meditation"
-            android:background="#89e3f0"
+            android:background="@color/colorPrimaryDark"
             android:layout_margin="10dp"
             android:id="@+id/meditation"/>
 
@@ -84,7 +84,7 @@
             android:layout_height="match_parent"
             tools:context=".MainActivity"
             android:orientation="vertical"
-            android:background="#89e3f0"
+            android:background="@color/colorPrimaryDark"
             android:layout_margin="10dp">
             <ImageButton
                 android:layout_width="match_parent"
@@ -93,14 +93,14 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/nature"
                 android:layout_margin="10dp"
-                android:background="#89e3f0"
+                android:background="@color/colorPrimaryDark"
                 android:id="@+id/nature"/>
 
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="#89e3f0"
+                android:background="@color/colorPrimaryDark"
                 android:scaleType="centerInside"
                 android:src="@drawable/ocean"
                 android:layout_margin="10dp"
@@ -112,7 +112,7 @@
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
                 android:src="@drawable/mozart"
-                android:background="#89e3f0"
+                android:background="@color/colorPrimaryDark"
                 android:layout_margin="10dp"
                 android:id="@+id/mozart"/>
             <ImageButton
@@ -121,7 +121,7 @@
                 android:layout_weight="1"
                 android:scaleType="centerInside"
                 android:src="@drawable/vacuum"
-                android:background="#89e3f0"
+                android:background="@color/colorPrimaryDark"
                 android:layout_margin="10dp"
                 android:id="@+id/vacuum"/>
         </LinearLayout>
