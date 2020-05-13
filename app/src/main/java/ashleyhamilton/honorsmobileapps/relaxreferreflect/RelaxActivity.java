@@ -2,7 +2,6 @@ package ashleyhamilton.honorsmobileapps.relaxreferreflect;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -19,10 +18,11 @@ public class RelaxActivity extends AppCompatActivity {
         ImageButton jazz=findViewById(R.id.jazz);
         ImageButton meditation=findViewById(R.id.meditation);
         ImageButton mozart=findViewById(R.id.mozart);
-        final ImageButton nature=findViewById(R.id.nature);
+        ImageButton nature=findViewById(R.id.nature);
         ImageButton ocean=findViewById(R.id.ocean);
         ImageButton upbeat=findViewById(R.id.upbeat);
         ImageButton vacuum=findViewById(R.id.vacuum);
+        Button stop=findViewById(R.id.stop);
         View.OnClickListener myListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +72,7 @@ public class RelaxActivity extends AppCompatActivity {
         ocean.setOnClickListener(myListener);
         upbeat.setOnClickListener(myListener);
         vacuum.setOnClickListener(myListener);
+        stop.setOnClickListener(myListener);
     }
     @Override
     protected void onStop(){
