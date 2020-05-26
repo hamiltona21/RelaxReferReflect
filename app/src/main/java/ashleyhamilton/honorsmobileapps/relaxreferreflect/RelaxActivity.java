@@ -1,7 +1,11 @@
 package ashleyhamilton.honorsmobileapps.relaxreferreflect;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +27,7 @@ public class RelaxActivity extends AppCompatActivity {
         ImageButton upbeat=findViewById(R.id.upbeat);
         ImageButton vacuum=findViewById(R.id.vacuum);
         Button stop=findViewById(R.id.stop);
+        Button help=findViewById(R.id.help);
         View.OnClickListener myListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +67,20 @@ public class RelaxActivity extends AppCompatActivity {
                     mMediaPlayer=MediaPlayer.create(RelaxActivity.this, R.raw.vacuum);
                     mMediaPlayer.start();
                 }
+                else if(v.getId() == R.id.help) {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RelaxActivity.this);
+                    alertDialogBuilder.setMessage("This screen is a satisfying sound board. Select an image to play a tune. From there, you can select another image to stop the previous sound and start to play a new one. Press \"stop all\" to stop the music.");
+                            alertDialogBuilder.setPositiveButton("OK",
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface arg0, int arg1) {
+
+                                        }
+                                    });
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                }
+
             }
         };
         frequency.setOnClickListener(myListener);
@@ -73,6 +92,7 @@ public class RelaxActivity extends AppCompatActivity {
         upbeat.setOnClickListener(myListener);
         vacuum.setOnClickListener(myListener);
         stop.setOnClickListener(myListener);
+        help.setOnClickListener(myListener);
     }
     @Override
     protected void onStop(){
@@ -82,4 +102,5 @@ public class RelaxActivity extends AppCompatActivity {
             mMediaPlayer=null;
         }
     }
+
 }
