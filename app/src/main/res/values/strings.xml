@@ -6,4 +6,7 @@
     <string name="spaceHolder">Inspirational Quote</string>
     <string name="stop_all">Stop all</string>
     <string name="help">help</string>
+    <string name="mood_reflection">Mood Reflection</string>
+    <string name="clear">Clear</string>
+    <string name="pick_a_date">Pick a date</string>
 </resources>
