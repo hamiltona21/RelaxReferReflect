@@ -58,6 +58,15 @@
         android:layout_gravity="center_horizontal"
         />
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="26sp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/showDate"
+        android:padding="10dp"
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"

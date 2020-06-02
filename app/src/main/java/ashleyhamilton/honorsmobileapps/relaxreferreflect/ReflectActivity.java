@@ -1,6 +1,7 @@
 package ashleyhamilton.honorsmobileapps.relaxreferreflect;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -9,9 +10,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class ReflectActivity extends AppCompatActivity {
     EditText journal;
+    TextView showDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +22,8 @@ public class ReflectActivity extends AppCompatActivity {
         Button help=findViewById(R.id.help_reflect);
         journal=findViewById(R.id.editText);
         Button clear=findViewById(R.id.clear);
+        Button pickDate=findViewById(R.id.date);
+        showDate=findViewById(R.id.showDate);
         View.OnClickListener myListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,13 +40,31 @@ public class ReflectActivity extends AppCompatActivity {
                     AlertDialog alertDialog = alertDialogBuilder.create();
                     alertDialog.show();
                 }
-                if(v.getId() == R.id.clear) {
+                else if(v.getId() == R.id.clear) {
                     journal.setText("");
+                }
+                else if(v.getId() == R.id.date) {
+                    showDatePickerDialog(v);
+
                 }
 
             }
         };
         help.setOnClickListener(myListener);
         clear.setOnClickListener(myListener);
+        pickDate.setOnClickListener(myListener);
     }
+    public void showDatePickerDialog(View v){
+        DialogFragment newFragment=new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+
+    }
+    public void processDatePickerResult(int year, int month, int day){
+        String sDay=Integer.toString(day);
+        String sMonth=Integer.toString(month);
+        String sYear=Integer.toString(year);
+        String dateMessage=(sMonth+"/"+sDay+"/"+sYear);
+        showDate.setText(dateMessage);
+    }
+
 }
