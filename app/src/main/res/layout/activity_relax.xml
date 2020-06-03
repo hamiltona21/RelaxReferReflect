@@ -17,6 +17,7 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/help"
         android:padding="10dp"
+        android:textColor="#000000"
         />
     <Button
         android:layout_width="wrap_content"
@@ -29,6 +30,7 @@
         android:id="@+id/stop"
         android:padding="10dp"
         android:layout_below="@id/help"
+        android:textColor="#000000"
         />
 <LinearLayout
     android:layout_below="@id/stop"

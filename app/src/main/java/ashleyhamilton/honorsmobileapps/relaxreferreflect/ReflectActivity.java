@@ -1,24 +1,39 @@
 package ashleyhamilton.honorsmobileapps.relaxreferreflect;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
 
 public class ReflectActivity extends AppCompatActivity {
     EditText journal;
     TextView showDate;
+    int textSize;
+    int textColor;
+    int textStyle;
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reflect);
+        textSize=26;
+        textColor=0;
+        textStyle=0;
+        Toolbar myToolbar=(Toolbar)findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
         Button help=findViewById(R.id.help_reflect);
         journal=findViewById(R.id.editText);
         Button clear=findViewById(R.id.clear);
@@ -42,6 +57,10 @@ public class ReflectActivity extends AppCompatActivity {
                 }
                 else if(v.getId() == R.id.clear) {
                     journal.setText("");
+                    textColor=0;
+                    textSize=0;
+                    textStyle=0;
+                    showDate.setText("");
                 }
                 else if(v.getId() == R.id.date) {
                     showDatePickerDialog(v);
@@ -65,6 +84,49 @@ public class ReflectActivity extends AppCompatActivity {
         String sYear=Integer.toString(year);
         String dateMessage=(sMonth+"/"+sDay+"/"+sYear);
         showDate.setText(dateMessage);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.textsize:
+                if(textSize==26){
+                    journal.setTextSize(14);
+                    textSize=14;
+                }
+                else{
+                    journal.setTextSize(journal.getTextSize()+1);
+                    textSize=26;
+                }
+
+                return true;
+
+            case R.id.textColor:
+                if(textColor==3){
+                    textColor=0;
+                    journal.setTextColor(Color.BLACK);
+                }
+                else if(textColor==0){
+                    textColor++;
+                    journal.setTextColor(Color.RED);
+                }
+                else if(textColor==1){
+                    textColor++;
+                    journal.setTextColor(Color.BLUE);
+                }
+                else if(textColor==2){
+                    textColor++;
+                    journal.setTextColor(Color.WHITE);
+                }
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.actionbar,menu);
+        return true;
     }
 
 }
