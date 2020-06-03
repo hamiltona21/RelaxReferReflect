@@ -23,19 +23,18 @@ public class ReflectActivity extends AppCompatActivity {
     TextView showDate;
     int textSize;
     int textColor;
-    int textStyle;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reflect);
-        textSize=26;
+
         textColor=0;
-        textStyle=0;
         Toolbar myToolbar=(Toolbar)findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         Button help=findViewById(R.id.help_reflect);
         journal=findViewById(R.id.editText);
+        textSize=0;
         Button clear=findViewById(R.id.clear);
         Button pickDate=findViewById(R.id.date);
         showDate=findViewById(R.id.showDate);
@@ -44,7 +43,7 @@ public class ReflectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(v.getId() == R.id.help_reflect) {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ReflectActivity.this);
-                    alertDialogBuilder.setMessage("Write out your feelings in the lines below! Press the Clear button to delete your work. Customize your journal with the picking options on the top of the screen and by picking a date to further embellish your mood reflection journal.");
+                    alertDialogBuilder.setMessage("Write out your feelings in the lines below! Press the Clear button to delete your journal and date. Customize your journal with the picking options on the top of the screen and by picking a date to further embellish your mood reflection journal.");
                     alertDialogBuilder.setPositiveButton("OK",
                             new DialogInterface.OnClickListener() {
                                 @Override
@@ -59,7 +58,6 @@ public class ReflectActivity extends AppCompatActivity {
                     journal.setText("");
                     textColor=0;
                     textSize=0;
-                    textStyle=0;
                     showDate.setText("");
                 }
                 else if(v.getId() == R.id.date) {
@@ -89,13 +87,13 @@ public class ReflectActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.textsize:
-                if(textSize==26){
+                if(textSize==0){
                     journal.setTextSize(14);
-                    textSize=14;
+                    textSize=1;
                 }
                 else{
-                    journal.setTextSize(journal.getTextSize()+1);
-                    textSize=26;
+                    journal.setTextSize(26);
+                    textSize=0;
                 }
 
                 return true;
